@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 9076ea361b890b24988f082ebd01ca2e
+timeCreated: 1486811505
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Humanoid straight
+  fontNames:
+  - Humanoid straight
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

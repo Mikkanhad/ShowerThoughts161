@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 27b93e8fe34cbdd4e9a056e6dc7442a4
+timeCreated: 1486816388
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Arellion
+  fontNames:
+  - Arellion
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

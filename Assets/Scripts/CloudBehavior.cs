@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CloudBehavior : MonoBehaviour {
 
@@ -50,6 +51,7 @@ public class CloudBehavior : MonoBehaviour {
             script.m_Rigidbody.isKinematic = false;
             GameObject.Find("Blood").GetComponent<ParticleSystem>().Play();
             GameObject.Find("Blood").transform.parent = null;
+            GameObject.Find("Text").GetComponent<Text>().text = "You Died!\nPress R to Try Again";
         }
         Destroy(this.gameObject, 2f);
         sr.enabled = false;

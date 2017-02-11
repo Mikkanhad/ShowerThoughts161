@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: ddd968c9e5c0282419880fd0f030a7e6
+timeCreated: 1486811502
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Humanoid
+  fontNames:
+  - Humanoid
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
