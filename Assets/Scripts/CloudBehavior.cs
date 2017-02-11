@@ -16,6 +16,7 @@ public class CloudBehavior : MonoBehaviour {
         sr = GetComponent<SpriteRenderer>();
         rb.isKinematic = true;
         frozen = false;
+        col.enabled = false;
     }
 
     private void Update()
@@ -35,6 +36,7 @@ public class CloudBehavior : MonoBehaviour {
         frozen = true;
         rb.isKinematic = false;
         sr.material = Resources.Load<Material>("Materials/IcyMaterial");
+        col.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -7,9 +7,12 @@ public class CharacterMovement : MonoBehaviour
     [HideInInspector] public SpriteRenderer sr;
     [HideInInspector] public Rigidbody2D m_Rigidbody;
     [HideInInspector] public BoxCollider2D col;
+    [HideInInspector] public float velocity;
     private float dashCD;
     private bool facingRight;
     private GameObject particle;
+    [HideInInspector] public bool grounded;
+    
 
     private void Start()
     {
@@ -18,6 +21,7 @@ public class CharacterMovement : MonoBehaviour
         col = GetComponent<BoxCollider2D>();
         particle = GameObject.Find("DashParticle");
         facingRight = true;
+        velocity = 5;
     }
 
     private void Update()
@@ -42,7 +46,7 @@ public class CharacterMovement : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
 
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") && grounded)
         {
             m_Rigidbody.AddForce(new Vector2(0, 800));
         }
@@ -51,7 +55,7 @@ public class CharacterMovement : MonoBehaviour
             dashCD = 0.1f;
         }
 
-        m_Rigidbody.velocity = new Vector3(horizontal * 5, m_Rigidbody.velocity.y, 0);
+        m_Rigidbody.velocity = new Vector3(horizontal * velocity, m_Rigidbody.velocity.y, 0);
 
     }
 
@@ -59,11 +63,11 @@ public class CharacterMovement : MonoBehaviour
     {
         if(!facingRight)
         {
-            m_Rigidbody.velocity = new Vector3(-20, 0, 0);
+            m_Rigidbody.velocity = new Vector3(-(velocity * 4), 0, 0);
         }
         else
         {
-            m_Rigidbody.velocity = new Vector3(20, 0, 0);
+            m_Rigidbody.velocity = new Vector3((velocity * 4), 0, 0);
         }
     }
 
@@ -78,5 +82,5 @@ public class CharacterMovement : MonoBehaviour
         {
             facingRight = true;
         }
-    }   
+    }
 }

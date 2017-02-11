@@ -83,6 +83,8 @@
     <Compile Include="Assets\Scripts\CloudParticleDestroy.cs" />
     <Compile Include="Assets\Scripts\CreateClouds.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\GroundSwitch.cs" />
+    <Compile Include="Assets\Scripts\RandomCloudSpawner.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

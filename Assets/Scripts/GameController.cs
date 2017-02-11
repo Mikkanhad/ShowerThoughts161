@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -9,6 +10,10 @@ public class GameController : MonoBehaviour {
         if(Input.GetButtonDown("Cancel"))
         {
             Application.Quit();
+        }
+        if(Input.GetButtonDown("Restart"))
+        {
+            SceneManager.LoadScene("MainGame");
         }
     }
 }

@@ -17,13 +17,13 @@ Platform assembly: D:\UnityThings\ShowerThoughts\ShowerThoughts_Data\Managed\Uni
 Loading D:\UnityThings\ShowerThoughts\ShowerThoughts_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: D:\UnityThings\ShowerThoughts\ShowerThoughts_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading D:\UnityThings\ShowerThoughts\ShowerThoughts_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.030 seconds
+- Completed reload, in  0.025 seconds
 Platform assembly: D:\UnityThings\ShowerThoughts\ShowerThoughts_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\UnityThings\ShowerThoughts\ShowerThoughts_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3360x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.317093 ms
+UnloadTime: 4.109795 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1fd4 -> priority: 1 
+  Thread -> id: 164c -> priority: 1 
