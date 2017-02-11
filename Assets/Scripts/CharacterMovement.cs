@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-
-    private Rigidbody2D m_Rigidbody;
+    [HideInInspector] public SpriteRenderer sr;
+    [HideInInspector] public Rigidbody2D m_Rigidbody;
+    [HideInInspector] public BoxCollider2D col;
     private float dashCD;
     private bool facingRight;
     private GameObject particle;
@@ -13,6 +14,8 @@ public class CharacterMovement : MonoBehaviour
     private void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        col = GetComponent<BoxCollider2D>();
         particle = GameObject.Find("DashParticle");
         facingRight = true;
     }
@@ -21,6 +24,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if(dashCD >= 0)
         {
+            col.enabled = false;
             particle.SetActive(true);
             Dash();
             dashCD -= Time.deltaTime;
@@ -28,6 +32,7 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             particle.SetActive(false);
+            col.enabled = true;
             Move();
         }
         Flip();
@@ -64,14 +69,14 @@ public class CharacterMovement : MonoBehaviour
 
     private void Flip()
     {
-        if(m_Rigidbody.velocity.x < 0 && facingRight)
+        float h = Input.GetAxisRaw("Horizontal");
+        if(h < 0 && facingRight)
         {
             facingRight = false;
         }
-        else if(m_Rigidbody.velocity.x > 0 && !facingRight)
+        else if(h > 0 && !facingRight)
         {
             facingRight = true;
         }
-    }
-        
+    }   
 }
