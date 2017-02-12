@@ -28,7 +28,6 @@ public class CharacterMovement : MonoBehaviour
     {
         if(dashCD >= 0)
         {
-            col.enabled = false;
             particle.SetActive(true);
             Dash();
             dashCD -= Time.deltaTime;
@@ -36,7 +35,6 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             particle.SetActive(false);
-            col.enabled = true;
             Move();
         }
         Flip();
