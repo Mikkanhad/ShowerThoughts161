@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour {
         if(Input.GetButtonDown("Restart"))
         {
             SceneManager.LoadScene("MainGame");
+            GameObject.Find("ChipRocket").GetComponent<AudioSource>().time = 13.1f;
+            GameObject.Find("ChipRocket").GetComponent<AudioSource>().Play();
         }
     }
 }

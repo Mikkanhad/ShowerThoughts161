@@ -25,6 +25,7 @@ public class TextManipulator : MonoBehaviour {
         Rotate();
         CircleAround();
         timePassed += Time.deltaTime;
+        Time.timeScale = 1;
     }
 
     private void Rotate()
