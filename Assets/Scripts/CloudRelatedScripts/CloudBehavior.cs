@@ -53,7 +53,7 @@ public class CloudBehavior : MonoBehaviour {
             script.m_Rigidbody.isKinematic = false;
             GameObject.Find("Blood").GetComponent<ParticleSystem>().Play();
             GameObject.Find("Blood").transform.parent = null;
-            GameObject.Find("Text").GetComponent<Text>().text = "You Died!\nPress R to Try Again";
+            GameObject.Find("Text").GetComponent<Text>().text = "You Died!\nPress R to Insert Another Coin";
             GameObject.Find("ChipRocket").GetComponent<AudioSource>().Pause();
             GameObject.Find("Lol U Died").GetComponent<AudioSource>().Play();
         }

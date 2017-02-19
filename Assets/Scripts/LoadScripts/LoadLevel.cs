@@ -9,7 +9,7 @@ public class LoadLevel : MonoBehaviour
     {
         if (Input.GetButtonDown("Submit"))
         {
-            SceneManager.LoadScene("Controls");
+            SceneManager.LoadScene("Options");
         }
         if (Input.GetButtonDown("Cancel"))
         {

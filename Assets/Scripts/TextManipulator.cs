@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class TextManipulator : MonoBehaviour {
 
-    private Text txt;
     private GameObject textObject;
     private bool rotateLeft;
     private float timePassed;
@@ -14,7 +13,6 @@ public class TextManipulator : MonoBehaviour {
     private void Start()
     {
         textObject = GameObject.Find("Text");
-        txt = textObject.GetComponent<Text>();
         rotateLeft = true;
         timePassed = 0;
         origin = textObject.transform.position;

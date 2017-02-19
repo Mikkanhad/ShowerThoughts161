@@ -10,18 +10,27 @@ public class WinTimer : MonoBehaviour {
     private Text text;
     private GameObject player;
     [HideInInspector] public bool GameLive;
+    private bool endless;
 
     private void Start()
     {
         GameLive = true;
-        timer = 30f;
+        endless = GameObject.Find("OptionsManager").GetComponent<OptionsScript>().endless;
+        if(!endless)
+        {
+            timer = 30f;
+        }
+        else
+        {
+            timer = 0;
+        }
         player = GameObject.Find("Character");
         text = GameObject.Find("Timer").GetComponent<Text>();
     }
 
     private void Update()
     {
-        if (GameLive)
+        if (GameLive && !endless)
         {
             timer -= Time.deltaTime;
             text.text = "" + Mathf.Ceil(timer);
@@ -32,6 +41,29 @@ public class WinTimer : MonoBehaviour {
                 {
                     SceneManager.LoadScene("WIN");
                 }
+            }
+        }
+        else if(GameLive && endless)
+        { 
+            if(player.gameObject != null && player.tag != "Dead")
+            {
+                timer += Time.deltaTime;
+                text.text = text.text = "" + Mathf.Ceil(timer);
+            }
+            if (player.gameObject == null || player.tag != "Dead")
+            {
+                if (!PlayerPrefs.HasKey("highScore"))
+                {
+                    PlayerPrefs.SetFloat("highScore", Mathf.Floor(timer));
+                }
+                else
+                {
+                    if (PlayerPrefs.GetFloat("highScore") < Mathf.Ceil(timer))
+                    {
+                        PlayerPrefs.SetFloat("highScore", Mathf.Ceil(timer));
+                    }
+                }
+                PlayerPrefs.Save();
             }
         }
     }
