@@ -11,7 +11,14 @@ public class RandomCloudSpawner : MonoBehaviour {
 
     private void Start()
     {
-        difficultyTimer = GameObject.Find("OptionsManager").GetComponent<OptionsScript>().cloudSpawnRate;      
+        if(!GameObject.Find("OptionsManager"))
+        {
+            difficultyTimer = 1f;
+        }
+        else
+        {
+            difficultyTimer = GameObject.Find("OptionsManager").GetComponent<OptionsScript>().cloudSpawnRate;
+        }   
         cloudTimer = 1f;
         rotation = Quaternion.Euler(0, 0, 0);
     }

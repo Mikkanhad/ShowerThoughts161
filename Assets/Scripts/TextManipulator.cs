@@ -29,11 +29,11 @@ public class TextManipulator : MonoBehaviour {
     private void Rotate()
     {
         float z = textObject.transform.rotation.eulerAngles.z;
-        if (z >= 345 && z < 346)
+        if (z >= 345 && z < 350)
         {
             rotateLeft = false;
         }
-        else if (z >= 14 && z < 15)
+        else if (z >= 10 && z < 15)
         {
             rotateLeft = true;
         }

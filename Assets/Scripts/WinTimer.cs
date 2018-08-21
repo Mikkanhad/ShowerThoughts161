@@ -15,8 +15,15 @@ public class WinTimer : MonoBehaviour {
     private void Start()
     {
         GameLive = true;
-        endless = GameObject.Find("OptionsManager").GetComponent<OptionsScript>().endless;
-        if(!endless)
+        if(!GameObject.Find("OptionsManager"))
+        {
+            endless = false;
+        }
+        else
+        {
+            endless = GameObject.Find("OptionsManager").GetComponent<OptionsScript>().endless;
+        }
+        if (!endless)
         {
             timer = 30f;
         }
