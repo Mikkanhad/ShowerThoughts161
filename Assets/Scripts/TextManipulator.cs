@@ -13,6 +13,7 @@ public class TextManipulator : MonoBehaviour {
     private void Start()
     {
         textObject = GameObject.Find("Text");
+        textObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 347));
         rotateLeft = true;
         timePassed = 0;
         origin = textObject.transform.position;
@@ -29,6 +30,7 @@ public class TextManipulator : MonoBehaviour {
     private void Rotate()
     {
         float z = textObject.transform.rotation.eulerAngles.z;
+        print(z);
         if (z >= 345 && z < 350)
         {
             rotateLeft = false;
