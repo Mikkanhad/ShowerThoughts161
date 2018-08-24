@@ -9,6 +9,7 @@ public class GroundSwitch : MonoBehaviour {
         if (collision.tag == "Ground")
         {
             GetComponentInParent<CharacterMovement>().grounded = true;
+            GetComponentInParent<CharacterMovement>().jumped = true;
         }
     }
 

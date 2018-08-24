@@ -13,6 +13,7 @@ public class CharacterMovement : MonoBehaviour
     private bool facingRight;
     private GameObject particle;
     [HideInInspector] public bool grounded;
+    [HideInInspector] public bool jumped;
     [HideInInspector] public float stunTimer;
     private bool hasBomb;
     
@@ -26,6 +27,7 @@ public class CharacterMovement : MonoBehaviour
         facingRight = true;
         velocity = 5;
         hasBomb = true;
+        jumped = false;
     }
 
     private void Update()
@@ -63,11 +65,7 @@ public class CharacterMovement : MonoBehaviour
     private void Move()
     {
         float horizontal = Input.GetAxis("Horizontal");
-
-        if(Input.GetButtonDown("Jump") && grounded)
-        {
-            m_Rigidbody.AddForce(new Vector2(0, 800));
-        }
+        Jump();
         if(Input.GetButtonDown("Dash"))
         {
             dashCD = 0.1f;
@@ -75,6 +73,27 @@ public class CharacterMovement : MonoBehaviour
 
         m_Rigidbody.velocity = new Vector3(horizontal * velocity, m_Rigidbody.velocity.y, 0);
 
+    }
+    private void Jump()
+    {
+        if (m_Rigidbody.gravityScale < 5)
+        {
+            m_Rigidbody.gravityScale += Time.deltaTime * 5f;
+        }
+        else if(m_Rigidbody.gravityScale > 5)
+        {
+            m_Rigidbody.gravityScale = 5f;
+        }
+        if(jumped && !Input.GetButton("Jump"))
+        {
+            m_Rigidbody.gravityScale = 5f;
+        }
+        if(Input.GetButton("Jump") && grounded)
+        {
+            jumped = true;
+            m_Rigidbody.gravityScale = 0;
+            m_Rigidbody.AddForce(new Vector2(0, 200));
+        }
     }
     private void Dash()
     {

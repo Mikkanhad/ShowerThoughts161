@@ -30,7 +30,6 @@ public class TextManipulator : MonoBehaviour {
     private void Rotate()
     {
         float z = textObject.transform.rotation.eulerAngles.z;
-        print(z);
         if (z >= 345 && z < 350)
         {
             rotateLeft = false;
