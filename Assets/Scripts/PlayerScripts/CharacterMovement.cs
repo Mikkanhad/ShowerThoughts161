@@ -92,7 +92,7 @@ public class CharacterMovement : MonoBehaviour
         {
             jumped = true;
             m_Rigidbody.gravityScale = 0;
-            m_Rigidbody.AddForce(new Vector2(0, 200));
+            m_Rigidbody.AddForce(new Vector2(0, 400));
         }
     }
     private void Dash()
